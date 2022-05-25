@@ -1,13 +1,8 @@
 import os
 import json
 
-# os.chdir("//cued-fs/users/General/is473/windows-home/Documents/SL3 German/")
-
 RECORDINGS_DIR = "corpora/zenodo-tweets/german-tweet-sample-2022-04/"
 date = RECORDINGS_DIR[-8:-1]
-
-# record1 = os.listdir(RECORDINGS_DIR)[0]
-# record1 += "/"
 
 with open(f"corpora/extracted-tweets/all-tweets-{date}.txt", 'w', encoding='utf-8') as w:
     for count, recording in enumerate(os.listdir(RECORDINGS_DIR)):

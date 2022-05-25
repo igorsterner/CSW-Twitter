@@ -47,6 +47,7 @@ print(output)
 
 for w in sorted(output, key=output.get, reverse=True):
     print(w, output[w])
+
 # common = list(eng_words & germ_words)
 #
 # removal = ["I", "die", "am", "will", "in", "a", "war", "an", "was", "also", "so", "man", "fast", "hat", "all"]
