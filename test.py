@@ -1,14 +1,3 @@
-import nltk
-import pprint as pp
-from cleantext import clean
+st = "I would LIKe to GO to The Park"
 
-tweet = 'Danke &amp; schön, Dich in der "Arche Freiheit" zu haben 😊'
-
-print(clean(tweet,
-            lower = False,
-            no_urls=True,
-            no_emoji = True,
-            lang= 'de',
-            no_emails = True,
-            no_phone_numbers = True,
-            ))
+print(st.casefold())

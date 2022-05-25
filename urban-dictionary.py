@@ -8,15 +8,14 @@ entries = ""
 # with open(f"dictionaries/urban-dictionary/data/A.data", 'r', encoding='utf-8') as f:
 #     entries = f.read().replace('\n', ' ')
 
-with open("dictionaries/100k-en.txt", 'r', encoding='utf-8') as f:
+with open("dictionaries/en-dict.txt", 'r', encoding='utf-8') as f:
     english = f.read().splitlines()
 
 for char in alphabet[0:26]:
     with open(f"dictionaries/urban-dictionary/data/{char.upper()}.data", 'r', encoding = 'utf-8') as f:
         entries += f.read().replace('\n', ' ').replace('"','')
 
-print(len(entries))
-
+# entries = entries[0:1000]
 print("Splitting words...")
 words = entries.split()
 
@@ -24,18 +23,24 @@ print("Passing words to instance of Counter class...")
 Counter = Counter(words)
 
 print("Finding most common words...")
-top_words = Counter.most_common(100000)
+top_words = Counter.items()
+urban = {}
+for word in top_words:
+    if word[0] not in english and word[1] > 5:
+        urban[word[0]] = word[1]
 
-urban = []
-for word in tqdm(top_words):
-    if word not in english:
-        urban.append(word)
+print(f"Urban dictionary is {len(urban)} words long")
 
-print(urban)
-print(len(urban))
+i = 0
+j = 0
+file = "dictionaries/urban.csv"
+with open(file, 'w', encoding = 'utf-8') as f:
+    for word in urban.keys():
+        j += 1
+        i += urban[word]
+        f.write(f"{word}, {urban[word]}\n")
 
-print("Done")
-
+print(f"Outputted file {file} with {j} terms with word frequencies out of {i}")
 # print(type(top_words))
 # pprint.pprint(top_words)
 

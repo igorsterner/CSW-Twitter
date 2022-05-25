@@ -3,11 +3,11 @@ import enchant
 d = enchant.Dict("en_US")
 
 # English Dictionary
-with open("dictionaries/1000-en.txt", 'r', encoding ='utf8') as f:
+with open("dictionaries/old/1000-en.txt", 'r', encoding ='utf8') as f:
     englishwords = f.read().splitlines()
 
 # English Dictionary
-with open("dictionaries/1000-de.txt", 'r', encoding ='utf8') as f:
+with open("dictionaries/old/1000-de.txt", 'r', encoding ='utf8') as f:
     germanwords = f.read().splitlines()
 
 eng_words = englishwords
