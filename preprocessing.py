@@ -1,5 +1,3 @@
-import nltk
-import pprint as pp
 from cleantext import clean
 from tqdm import tqdm
 

@@ -1,6 +1,5 @@
 import os
 import json
-import pprint
 
 # os.chdir("//cued-fs/users/General/is473/windows-home/Documents/SL3 German/")
 
