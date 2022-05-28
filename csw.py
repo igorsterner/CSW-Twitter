@@ -14,7 +14,7 @@ with open("dictionaries/csw.csv", 'r', encoding='utf-8') as f:
 # words_tup = csv_to_words('dictionaries/csw.csv')
 # words = [i[0] for i in words_tup]
 words.remove("url")
-tweets = tweets[0:100]
+tweets = tweets[0:1000]
 with open("cswdatabase/csw.txt",  'w', encoding = 'utf-8') as f:
     for tweet in tqdm(tweets):
         isCSW = False
