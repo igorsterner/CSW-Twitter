@@ -10,8 +10,8 @@ def leipzig_dict(file_in, file_out):
     with open(file_in, 'r', newline='', encoding='utf-8') as f:
         with open(file_out, 'w', encoding='utf-8') as w:
             for line in csv.reader(f, delimiter='\t'):
-                if int(line[2]) > 5:
-                    w.write(f"{line[1]}, {line[2]}\n")
+                if (int(line[2]) > 5) and line[1].isalpha():
+                    w.write(f"{line[1]},{line[2]}\n")
                     i += int(line[2])
                     j += 1
 
