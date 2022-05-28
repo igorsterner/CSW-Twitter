@@ -18,12 +18,15 @@ print("Finding most common words...")
 top_words = Counter.items()
 urban = {}
 for word in top_words:
-    if (word[1] > 5) and (word[0].isalpha()):
-        urban[word[0]] = word[1]
+    low_word = word[0].lower()
+    if (word[1] > 5) and (word[0].isalpha()) and (len(word[0]) > 2):
+        if low_word in urban:
+            urban[low_word] += word[1]
+        else:
+            urban[low_word] = word[1]
 
 print(f"Urban dictionary is {len(urban)} words long")
 urban = {k: v for k, v in sorted(urban.items(), key=lambda item: item[1], reverse = True)}
-print(urban)
 i = 0
 j = 0
 file = "dictionaries/urban.csv"
