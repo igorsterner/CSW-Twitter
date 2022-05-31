@@ -1,16 +1,27 @@
 from cleantext import clean
 from tqdm import tqdm
+from langdetect import detect
 
 print("Reading tweets...")
 with open("corpora/extracted-tweets/all-tweets-2022-04.txt", 'r', encoding='utf-8') as f:
     tweets = f.readlines()
-
+tweets = tweets[0:1000]
 remove = ['@', '*']
-
+i = 0
+numtweets = len(tweets)
 print("Cleaning tweets...")
 
 with open("corpora/clean-tweets/clean-tweets-2022-04.txt", 'w', encoding='utf-8') as f:
     for tweet in tqdm(tweets):
+
+        try:
+            lan = detect(tweet)
+        except:
+            lan = 'error'
+
+        if lan != 'de':
+            i += 1
+            continue
 
         tweet_clean = clean(tweet,
                             lower=False,
@@ -30,3 +41,6 @@ with open("corpora/clean-tweets/clean-tweets-2022-04.txt", 'w', encoding='utf-8'
 
         f.write(tweet_clean)
         f.write("\n")
+
+perc = (i/numtweets)*100
+print(f"{perc}% of tweets were identified as non-German")

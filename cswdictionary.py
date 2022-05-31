@@ -19,10 +19,13 @@ with open('dictionaries/de-dictcc.txt', 'r', encoding = 'utf-8') as f:
 
 english = csv_to_words('dictionaries/en-dict.csv')
 german = csv_to_words('dictionaries/de-dict.csv')
+austrian = csv_to_words('dictionaries/de-at-dict.csv')
+swiss = csv_to_words('dictionaries/de-ch-dict.csv')
+
 urban = csv_to_words('dictionaries/urban.csv')
 
 eng_tot = english + urban
-de_tot = german_dictcc
+de_tot = german_dictcc + german + austrian + swiss
 
 eng = set(eng_tot)
 de = set(de_tot)
@@ -44,7 +47,7 @@ de = set(de_tot)
 tot = eng - de
 i = 0
 j = 0
-file = "dictionaries/csw.csv"
+file = "dictionaries/csw.txt"
 with open(file, 'w', encoding='utf-8') as f:
     for word in tot:
         j += 1

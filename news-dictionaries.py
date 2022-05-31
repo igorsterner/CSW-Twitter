@@ -91,11 +91,21 @@ def dictcc_dict(file_in):
 # de = leipzig_dict(de_file, 2)
 # write_dictionary(de, de_words)
 
+de_at_file = "dictionaries/Leipzig Dict/100k-de-at-news-2012.txt"
+de_at_words = "dictionaries/de-at-dict.csv"
+de_at = leipzig_dict(de_at_file, 2)
+write_dictionary(de_at, de_at_words)
 
-de_dictcc_file = "dictionaries/dict.cc/dictdict.txt"
-dictcc_words = "dictionaries/de-dictcc.txt"
-de_dictcc = dictcc_dict(de_dictcc_file)
+de_ch_file = "dictionaries/Leipzig Dict/100k-de-ch-news-2012.txt"
+de_ch_words = "dictionaries/de-ch-dict.csv"
+de_ch = leipzig_dict(de_ch_file, 2)
+write_dictionary(de_ch, de_ch_words)
 
-with open(dictcc_words, 'w', encoding='utf-8') as w:
-    for word in de_dictcc:
-        w.write(f"{word}\n")
+
+# de_dictcc_file = "dictionaries/dict.cc/dictdict.txt"
+# dictcc_words = "dictionaries/de-dictcc.txt"
+# de_dictcc = dictcc_dict(de_dictcc_file)
+#
+# with open(dictcc_words, 'w', encoding='utf-8') as w:
+#     for word in de_dictcc:
+#         w.write(f"{word}\n")
