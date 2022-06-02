@@ -5,7 +5,7 @@ from langdetect import detect
 print("Reading tweets...")
 with open("corpora/extracted-tweets/all-tweets-2022-04.txt", 'r', encoding='utf-8') as f:
     tweets = f.readlines()
-tweets = tweets[0:1000]
+
 remove = ['@', '*']
 i = 0
 numtweets = len(tweets)

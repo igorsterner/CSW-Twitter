@@ -22,6 +22,8 @@ with open("cswdatabase/csw.txt",  'w', encoding = 'utf-8') as f:
         lastCSW = True
         log = ""
 
+        tweets = tweet.replace('-',' ')
+
         for word in nltk.word_tokenize(tweet):
             if word[0].isupper():
                 if lastCSW:
@@ -35,6 +37,9 @@ with open("cswdatabase/csw.txt",  'w', encoding = 'utf-8') as f:
                 isCSW = True
                 lastCSW = True
                 log += word + " "
+            elif lastCSW:
+                log += "..."
+                lastCSW = False
         if isCSW:
             f.write(log)
             f.write('\n')
@@ -42,7 +47,6 @@ with open("cswdatabase/csw.txt",  'w', encoding = 'utf-8') as f:
             f.write('\n')
             f.write('-----------------------------------------------------------\n')
 
-print(f"There were {i} English detected tweets")
 csw = sorted(csw.items(), key=lambda item: item[1], reverse = True)
 with open('results/csw.csv', 'w', encoding='utf-8') as f:
     for word in csw:
