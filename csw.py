@@ -1,5 +1,6 @@
 import pprint
 import nltk
+nltk.download('punkt')
 from tqdm import tqdm
 import csv
 
