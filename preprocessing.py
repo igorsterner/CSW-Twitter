@@ -9,6 +9,7 @@ with open("corpora/extracted-tweets/all-tweets-2022-04.txt", 'r', encoding='utf-
 remove = ['@', '*']
 i = 0
 numtweets = len(tweets)
+
 print("Cleaning tweets...")
 
 with open("corpora/clean-tweets/clean-tweets-2022-04.txt", 'w', encoding='utf-8') as f:
@@ -43,4 +44,4 @@ with open("corpora/clean-tweets/clean-tweets-2022-04.txt", 'w', encoding='utf-8'
         f.write("\n")
 
 perc = (i/numtweets)*100
-print(f"{perc}% of tweets were identified as non-German")
+print(f"{perc}% of tweets were identified as non-German (that is {i} out of {numtweets})")
