@@ -18,8 +18,13 @@ print("Finding most common words...")
 top_words = Counter.items()
 urban = {}
 for word in top_words:
+    repeated = False
     low_word = word[0].lower()
-    if (word[1] > 5) and (word[0].isalpha()) and (len(word[0]) > 2):
+    for i in range(len(low_word)-2):
+        if low_word[i] == low_word[i+1] == low_word[i+2]:
+            repeated = True
+            break
+    if (not repeated) and (word[1] > 10) and (word[0].isalpha()) and (len(word[0]) > 2) and (not word[0][0].isupper()):
         if low_word in urban:
             urban[low_word] += word[1]
         else:

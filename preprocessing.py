@@ -14,15 +14,6 @@ print("Cleaning tweets...")
 with open("corpora/clean-tweets/clean-tweets-2022-04.txt", 'w', encoding='utf-8') as f:
     for tweet in tqdm(tweets):
 
-        try:
-            lan = detect(tweet)
-        except:
-            lan = 'error'
-
-        if lan != 'de':
-            i += 1
-            continue
-
         tweet_clean = clean(tweet,
                             lower=False,
                             no_urls=True,
@@ -38,6 +29,15 @@ with open("corpora/clean-tweets/clean-tweets-2022-04.txt", 'w', encoding='utf-8'
             if not any((r in w) for r in remove):
                 words_clean.append(w)
         tweet_clean = ' '.join(words_clean)
+
+        try:
+            lan = detect(tweet_clean)
+        except:
+            lan = 'error'
+
+        if lan != 'de':
+            i += 1
+            continue
 
         f.write(tweet_clean)
         f.write("\n")
