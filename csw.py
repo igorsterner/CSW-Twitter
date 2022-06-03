@@ -3,7 +3,7 @@ import nltk
 from tqdm import tqdm
 import csv
 
-with open("corpora/clean-tweets/department/clean-tweets-2022-04.txt", 'r', encoding = 'utf-8') as f:
+with open("corpora/clean-tweets/clean-tweets-2022-04.txt", 'r', encoding = 'utf-8') as f:
     tweets = f.read().splitlines()
 
 words = []
