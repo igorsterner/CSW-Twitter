@@ -27,6 +27,8 @@ csw = {}
 i = 0
 c = 0
 
+print(f"Tweets loaded from {source} and are being processed and written to {norm}")
+
 with open(norm,  'w', encoding = 'utf-8') as f:
     for tweet in tqdm(tweets):
         isCSW = False
