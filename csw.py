@@ -3,7 +3,7 @@ import nltk
 from tqdm import tqdm
 import csv
 
-with open("corpora/clean-tweets/clean-tweets-2022-04.txt", 'r', encoding = 'utf-8') as f:
+with open("corpora/clean-tweets/department/clean-tweets-2022-04.txt", 'r', encoding = 'utf-8') as f:
     tweets = f.read().splitlines()
 
 words = []
@@ -16,7 +16,6 @@ for r in removal:
 # words.remove("pokemon")
 # words_tup = csv_to_words('dictionaries/csw.csv')
 # words = [i[0] for i in words_tup]
-tweets = tweets[0:1000]
 len_tweets = len(tweets)
 csw = {}
 i = 0

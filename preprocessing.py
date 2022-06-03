@@ -5,14 +5,14 @@ from langdetect import detect
 print("Reading tweets...")
 with open("corpora/extracted-tweets/all-tweets-2022-04.txt", 'r', encoding='utf-8') as f:
     tweets = f.readlines()
-
+tweets = tweets[:100]
 remove = ['@', '*']
 i = 0
 numtweets = len(tweets)
 
 print("Cleaning tweets...")
 
-with open("corpora/clean-tweets/clean-tweets-2022-04.txt", 'w', encoding='utf-8') as f:
+with open("corpora/clean-tweets/clean-tweets-2022-04AAA.txt", 'w', encoding='utf-8') as f:
     for tweet in tqdm(tweets):
 
         tweet_clean = clean(tweet,
