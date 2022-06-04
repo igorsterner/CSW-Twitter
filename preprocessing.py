@@ -7,7 +7,6 @@ def preprocess(month):
     print(f"Reading tweets for 2022-{month}...")
     with open(f"corpora/extracted-tweets/all-tweets-2022-{month}.txt", 'r', encoding='utf-8') as f:
         tweets = f.readlines()
-    tweets = tweets[:100]
     remove = ['@', '*']
     i = 0
     numtweets = len(tweets)
