@@ -16,9 +16,15 @@ def rand_csw():
         i += 1
 
     with open("humanevaluation/100-sampled-csw.txt", 'w', encoding='utf-8') as w:
-        for tweet in tweets:
-            for line in tweet:
-                w.write(line)
+        for i, tweet in enumerate(tweets):
+            w.write("Suggested CSW words (non-exhaustive): \n" + tweet[0])
+            w.write("\n")
+            w.write("Tweet " + str(i+1) + ":\n" + tweet[1])
+            w.write("\n")
+            w.write("Add an x if this tweet uses CSW: [  ]\n")
+            w.write("\n")
+            w.write(tweet[2])
+            w.write("\n")
 
 def rand_tweet():
     with open("corpora/clean-tweets/department/clean-tweets-2022-04.txt", 'r', encoding='utf-8') as f:
@@ -36,7 +42,12 @@ def rand_tweet():
         i += 1
 
     with open("humanevaluation/100-sampled-tweets.txt", 'w', encoding='utf-8') as w:
-        for tweet in tweets:
+        for i, tweet in enumerate(tweets):
+            w.write("Tweet " + str(i+1) + ":\n")
             w.write(tweet)
+            w.write("\nAdd an x if this tweet uses CSW: [  ]\n")
+            w.write("\n")
+            w.write("-----------------------------------------------------------\n\n")
 
+rand_csw()
 rand_tweet()

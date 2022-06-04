@@ -3,13 +3,17 @@ import nltk
 from tqdm import tqdm
 import csv
 
-source = "corpora/clean-tweets/clean-tweets-2022-04.txt"
-sourceeval = "humanevaluation/100-sampled-tweets.txt"
-eval1 = "humanevaluation/100-sampled-tweets-igor.txt"
-norm = "cswdatabase/csw-2022-04.txt"
+# source = "corpora/clean-tweets/clean-tweets-2022-04.txt"
+source = "humanevaluation/100-sampled-tweets.txt"
+eval = "humanevaluation/100-sampled-tweets-igor.txt"
+# eval = "cswdatabase/csw-2022-04.txt"
 
 with open(source, 'r', encoding = 'utf-8') as f:
     tweets = f.read().splitlines()
+    tweets = tweets[1::7]
+
+print(tweets)
+print(len(tweets))
 
 words = []
 
@@ -27,18 +31,15 @@ csw = {}
 i = 0
 c = 0
 
-print(f"Tweets loaded from {source} and are being processed and written to {norm}")
+print(f"Tweets loaded from {source} and are being processed and written to {eval}")
 
-with open(norm,  'w', encoding = 'utf-8') as f:
+with open(eval,  'w', encoding = 'utf-8') as f:
     for tweet in tqdm(tweets):
         isCSW = False
         lastCSW = True
         log = ""
 
-        tweets = tweet.replace('-',' ')
-        tweets = tweet.replace('#', '')
-
-        for word in nltk.word_tokenize(tweets):
+        for word in nltk.word_tokenize(tweet):
             if len(word) > 35:
                 isCSW = False
                 break
