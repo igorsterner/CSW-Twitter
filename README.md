@@ -2,6 +2,10 @@
 
 A report was written in German for this project and is available in the report directory as a PDF. A translation in English will shortly also be available.
 
+## Results
+
+A brief overview of the results of this project is available in the results.md file in this repo
+
 ## Requirements
 
 ```bash
@@ -66,3 +70,7 @@ Use the dictionary and cleaned tweets to identify tweets that use Code-switching
 ```angular2html
 python3 csw.py
 ```
+
+## Contact
+
+Please do drop me an email at is473@cam.ac.uk with any questions for about this project
