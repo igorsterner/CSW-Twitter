@@ -6,7 +6,6 @@ bibdata = parser.parse_file("citations/anthology+abstracts.bib")
 bibkeys = bibdata.entries.keys()
 bibarray = []
 
-print("NOW CHECKING!")
 match = {str(k): 0 for k in range(1998, 2023)}
 
 terms = ['code-switching',
