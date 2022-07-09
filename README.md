@@ -1,6 +1,6 @@
 ## Method
 
-A report was written in German for this project and is available in the report directory as a PDF. A translation in English will shortly also be available.
+A report was written in German for this project and is available in the docs directory as a PDF. A translation in English will shortly also be available.
 
 ## Results
 
@@ -54,21 +54,21 @@ The entire dataset used is available for non-commercial download from [here](htt
 Extract and clean the tweets first
 
 ```angular2html
-python3 preprocessing.py
+python3 src/preprocessing.py
 ```
 
 ## Dictionary compilation
 Compile the relevant dictionaries and combine into a 'Code-switching' dictionary
 
 ```angular2html
-python3 dictionaries.py
+python3 src/dictionaries.py
 ```
 
 ## Code-switched tweet detection
 Use the dictionary and cleaned tweets to identify tweets that use Code-switching, saving them into the copora/csw directory
 
 ```angular2html
-python3 csw.py
+python3 src/csw.py
 ```
 
 ## Contact

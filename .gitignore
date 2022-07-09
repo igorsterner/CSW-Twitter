@@ -2,8 +2,8 @@ corpora/
 dictionaries/
 results/
 citations/
-src/
 test.py
+biblib/
 .idea/
 cswdatabse/
 humanevaluation/
@@ -14,3 +14,4 @@ news-dictionaries.py
 humanevaluation.py
 urban-dictionary.py
 extractor.py
+/biblib/
