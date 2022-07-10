@@ -1,4 +1,6 @@
-## Method
+# German-English Code-switching
+
+This project implements a method to identified Code-switched German-English tweets automatically, as useful for the development of a new larger scale German-English Code-switching dataset. 
 
 A report was written in German for this project and is available in the docs directory as a PDF. A translation in English will shortly also be available.
 
@@ -70,6 +72,10 @@ Use the dictionary and cleaned tweets to identify tweets that use Code-switching
 ```angular2html
 python3 src/csw.py
 ```
+
+## Citations Counter
+
+A method was implemented to count Code-switching related citations from ACL, as contained in the acl-citations.py script and depicted in the report.
 
 ## Contact
 
